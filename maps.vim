@@ -1,25 +1,11 @@
-"inoremap ( ()<left>
-"inoremap [ []<left>
-"inoremap { {}<left>
-"inoremap {<CR> {<CR>}<ESC>O<TAB>
-"inoremap {;<CR> {<CR>};<ESC>O
-
 " Leader key set to space
 let mapleader = "\<Space>"
 nnoremap <Leader><Space> :Files<CR>
 nnoremap <Leader>/ :RG<CR>
-
 "Map j and k such that you may navigate soft-wrapped lines with the same keys
 " as you would normal lines
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
-
-inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
-inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
-inoremap <expr> ] strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
-inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
-inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"\<Left>"
-
 
 " Relaod init.vim
 nnoremap <leader>sv :source init.vim<CR>
@@ -54,12 +40,14 @@ nnoremap <silent>    <A-w> :BufferClose<CR>
 "                          :BufferCloseBuffersLeft<CR>
 "                          :BufferCloseBuffersRight<CR>
 " Magic buffer-picking mode
-nnoremap <silent> <C-s>    :BufferPick<CR>
+nnoremap <silent> <C-TAB>    :BufferPick<CR>
 " Sort automatically by...
-nnoremap <silent> <Space>bb :BufferOrderByBufferNumber<CR>
-nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
-nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
-nnoremap <silent> <Space>bw :BufferOrderByWindowNumber<CR>
+nnoremap <silent> <leader>bb :BufferOrderByBufferNumber<CR>
+nnoremap <silent> <leader>bd :BufferOrderByDirectory<CR>
+nnoremap <silent> <leader>bl :BufferOrderByLanguage<CR>
+nnoremap <silent> <leader>bw :BufferOrderByWindowNumber<CR>
+
+map <leader><TAB> <C-^>
 
 " Other:
 " :BarbarEnable - enables barbar (enabled by default)
@@ -115,15 +103,15 @@ nnoremap <silent> <C-i> :IndentGuidesToggle <CR>
 
 " <TAB>: completion.
   inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+  inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
 
 " COC
 """"""""""""""""""""""""""""""""""""""""
 " <CR>: completion
-  let g:coc_snippet_next = '<TAB>'
-  let g:coc_snippet_prev = '<S-TAB>'
+  "let g:coc_snippet_next = '<TAB>'
+  "let g:coc_snippet_prev = '<S-TAB>'
 
   inoremap <expr><CR> pumvisible() ? '<C-y>' : (coc#pum#visible() ? coc#_select_confirm() : "\<CR>")
-
 
   " Mappings for CoCList
 
@@ -200,8 +188,8 @@ nnoremap <silent> <C-i> :IndentGuidesToggle <CR>
   endfunction
 
 " jump forward or backward
-imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+"imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+"smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+"imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+"smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 
