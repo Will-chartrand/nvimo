@@ -148,15 +148,15 @@ nnoremap <silent> <C-i> :IndentGuidesToggle <CR>
 " containing special characters
   inoremap <C-w> <C-\><C-o>dB
   inoremap <C-BS> <C-\><C-o>db
-
+ 
 
 " Coc go to definition map
   nmap <silent> gd <Plug>(coc-definition)
 
 " Flutter Coc trigger actions while on a widget
-  nmap <silent><leader>ca <Plug>(coc-codelens-action)
-  vmap <silent><leader>a  <Plug>(coc-codeaction-selected)
-  nmap <silent><leader>a  <Plug>(coc-codeaction)
+  "nmap <silent><leader>ca <Plug>(coc-codelens-action)
+  "vmap <silent><leader>a  <Plug>(coc-codeaction-selected)
+  "nmap <silent><leader>a  <Plug>(coc-codeaction)
 
 " VSnip Snippet Maps
 
@@ -167,11 +167,11 @@ nnoremap <silent> <C-i> :IndentGuidesToggle <CR>
 
   " Some of these key choices were arbitrary;
   " it's just an example.
-  nnoremap <leader>fa :FlutterRun<cr>
-  nnoremap <leader>fq :FlutterQuit<cr>
-  nnoremap <leader>fr :FlutterHotReload<cr>
-  nnoremap <leader>fR :FlutterHotRestart<cr>
-  nnoremap <leader>fD :FlutterVisualDebug<cr>
+  "nnoremap <leader>fa :FlutterRun<cr>
+  "nnoremap <leader>fq :FlutterQuit<cr>
+  "nnoremap <leader>fr :FlutterHotReload<cr>
+  "nnoremap <leader>fR :FlutterHotRestart<cr>
+  "nnoremap <leader>fD :FlutterVisualDebug<cr>
 
 " Show documentation with shift K
 
@@ -179,7 +179,7 @@ nnoremap <silent> <C-i> :IndentGuidesToggle <CR>
 
   function! s:show_documentation()
     if (index(['vim','help'], &filetype) >= 0)
-      execute 'h '.expand('<cword>')
+      execute 'H '.expand('<cword>')
     elseif (coc#rpc#ready())
       call CocActionAsync('doHover')
     else
@@ -192,4 +192,9 @@ nnoremap <silent> <C-i> :IndentGuidesToggle <CR>
 "smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
 "imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 "smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+
+
+" Toggle spell-check
+nnoremap <M-c> :set spell! spelllang=en_us<CR>
+
 

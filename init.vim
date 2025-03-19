@@ -2,6 +2,7 @@
 source ~/.config/nvim/plugs.vim 
 source ~/.config/nvim/config.vim 
 source ~/.config/nvim/maps.vim 
+source ~/.config/nvim/snip/snippets.vim
 
 "Refresh vim as soon as configurations have changed
 set autoread
