@@ -7,7 +7,7 @@ Plug 'rmehri01/onenord.nvim'
 
 Plug 'bullets-vim/bullets.vim' " Auto bullets for lists
 
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
