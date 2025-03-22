@@ -10,12 +10,13 @@ autocmd FileType markdown setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandta
 let g:session_autosave = 'no'
 
 " Remove annoying message
-:let g:session_autoload = 'no'
+let g:session_autoload = 'no'
 
 syntax enable
 
 " colorscheme sacredforest
-colorscheme gruvbox
+colorscheme onedark
+
 " Set background to clear
 hi Normal guibg=NONE ctermbg=NONE
 
@@ -36,13 +37,14 @@ set clipboard+=unnamedplus
 
 set ignorecase smartcase
 
+filetype indent on
+
 " Go to the last cursor location when a file is opened, unless this is a
 " git commit (in which case it's annoying)
 au BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" |
         \ execute("normal `\"") |
     \ endif
-
 
 " Remove default maps for bullet-list plugin
 let g:bullets_set_mappings = 0
