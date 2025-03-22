@@ -1,14 +1,14 @@
 " Leader key set to space
 let mapleader = "\<Space>"
-nnoremap <Leader><Space> :Files<CR>
+nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>/ :RG<CR>
 "Map j and k such that you may navigate soft-wrapped lines with the same keys
 " as you would normal lines
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 
-" Relaod init.vim
-nnoremap <leader>sv :source init.vim<CR>
+" Make it so curly braces auto return and indent
+inoremap {<CR> {<CR>}<Esc>O
 
 " BARBAR TAB MANAGER
 "============================
@@ -78,10 +78,9 @@ tnoremap <A-h> <C-\><C-n><C-w>h
 " tnoremap <A-j> <C-\><C-n><C-w>j
 " tnoremap <A-k> <C-\><C-n><C-w>k
 tnoremap <A-l> <C-\><C-n><C-w>l
-nnoremap <A-h> <C-w>h
 " nnoremap <A-j> <C-w>j
 " nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
+"nnoremap <A-l> <C-w>l
 
 nnoremap <silent> <C-i> :IndentGuidesToggle <CR>
 
@@ -95,8 +94,9 @@ nnoremap <silent> <C-i> :IndentGuidesToggle <CR>
 
 " Ctrl-s to save
   noremap <silent> <C-S>          :update<CR>
-  vnoremap <silent> <C-S>         <C-C>:update<CR>
-  inoremap <silent> <C-S>         <C-O>:update<CR>
+
+  " Reload init.vim
+  nnoremap <Leader>r :source ~/.config/nvim/init.vim<CR>
 
 " Toggle autoclosing brackets
   noremap <silent> <C-_>          :CloseTagToggleBuffer<CR>
@@ -116,21 +116,21 @@ nnoremap <silent> <C-i> :IndentGuidesToggle <CR>
   " Mappings for CoCList
 
   " Show all diagnostics.
-  nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+  "nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
   " Manage extensions.
-  nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+  "nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
   " Show commands.
-  nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+  "nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
   " Find symbol of current document.
-  nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+  "nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
   " Search workspace symbols.
-  nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+  "nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
   " Do default action for next item.
-  nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+  "nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
   " Do default action for previous item.
-  nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+  "nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
   " Resume latest coc list.
-  nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>c
+  "nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>c
 
 """"""""""""""""""""""""""""""""""""""""
 
