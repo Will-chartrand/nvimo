@@ -73,6 +73,7 @@ set splitbelow
 
 " start terminal in insert mode
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+autocmd TermOpen * setlocal winfixheight
 
 " open terminal on ctrl+n
 function! OpenTerminal()
@@ -101,6 +102,8 @@ let g:coc_global_extensions = [
 " Open help dialog in new buffer in the same window
 command! -nargs=1 -complete=help H :enew | :set buftype=help | :h <args>
 
+" Make sure terminal always scrolls to the bottom
+autocmd BufEnter,WinEnter term://* startinsert
 
 " Flutter/Dart
 ""lua << EOF

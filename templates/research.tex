@@ -1,0 +1,138 @@
+\documentclass[a4paper]{article}
+
+% Packages
+\usepackage{geometry}
+\geometry{left=1.5cm, right=1.5cm, top=2.54cm, bottom=2.54cm}
+\usepackage{graphicx, hyperref, setspace, amsmath, amssymb, titlesec, fancyhdr, multicol, parskip, indentfirst, etoolbox, caption, cite, hyperref, xcolor}
+
+% Title Formatting
+\titleformat{\section}{\centering\large\scshape}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{1em}{}
+\setstretch{1.0} % Keep single spacing
+\setlength{\parskip}{6pt} % Space between paragraphs
+\titlespacing{\section}{0pt}{6pt}{6pt}
+\titlespacing{\subsection}{0pt}{6pt}{6pt}
+\titlespacing{\subsubsection}{0pt}{6pt}{6pt}
+% Document Title
+\title{
+    \textbf{<++>} 
+}
+
+\date{} % No date
+\captionsetup{labelfont={small,sc}, textfont={small,sc}}
+% Section Numbering
+% Define numbering format
+\renewcommand{\thesection}{\Roman{section}.}
+\renewcommand{\thesubsection}{\textit{\Alph{subsection}.}}
+\renewcommand{\thesubsubsection}{\textit{\arabic{subsubsection}.}}
+\renewcommand{\thetable}{\Roman{table}} % Set table numbering to Roman
+\renewcommand{\thefigure}{\Roman{figure}} % Number figures in Roman numerals
+
+% Make titles italic as well
+
+\titleformat{\subsection}{\normalfont\large\itshape}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\itshape}{\thesubsubsection}{1em}{}
+
+
+\setcounter{page}{1}
+
+% Fancy Header Configuration
+%\pagestyle{fancy}
+%\fancyhf{} % Clear all header/footer fields
+
+% First Page Header
+%\fancypagestyle{firstpage}{
+%    \fancyhead[C]{
+%        \centering
+%        {\fontsize{14pt}{10pt}\selectfont
+%        \textbf{Journal of Metaverse}\\
+%        \textbf{Research Article}}\\
+%        {\fontsize{8pt}{10pt}\selectfont
+%        \textbf{Received:} 2025-01-01 \textbf{Reviewing:} 2025-01-01 \& 2025-01-01 \textbf{Accepted:} 2025-01-01 %\textbf{Online:} 2025-01-01 \textbf{Issue Date:} 2025-01-01}\\
+%        \textbf{Year:} 202Y, \textbf{Volume:} X, \textbf{Issue:} X, \textbf{Pages:} XX-XX, \textbf{Doi:} 10.57019/jmv.XXXXXX
+%    }
+%}
+
+% Default Header for Other Pages
+%\fancyhead[C]{\textbf{Journal of Metaverse}}
+
+%\fancyfoot[L]{\includegraphics[width=1.5cm]{cc-by.png}}  % Adjust path & size
+%\fancyfoot[R]{\includegraphics[width=1.5cm]{cc-by.png}}  % Adjust path & size
+%\fancyfoot[C]{This work is licensed under a Creative Commons Attribution 4.0 International License.\\ \thepage}
+
+
+\begin{document}
+
+\maketitle
+\vspace{-1.5cm}
+% \thispagestyle{firstpage}
+
+% Authors Block
+\centering
+\textbf{<++>}\\ % NAME
+\textit{<++>}\\ % UNIVERSITY
+\textit{<++>}\\ % LOCATION
+\textit{<++>}\\ % EMAIL
+%\href{https://orcid.org/XXXX-XXXX-XXXX-XXXX}{%
+%\includegraphics[width=10pt]{orcid.png}
+
+\singlespacing
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0.5cm}
+
+\begin{multicols}{2}
+\setlength{\columnsep}{0.5cm}
+
+\section{Introduction}
+<++>
+
+\subsection{Background}
+<++>
+
+\subsubsection{Details}
+<++>
+
+\subsubsection{Sub Sub section}
+<++>
+
+%\begin{itemize}
+%    \item Main item
+%    \begin{itemize}
+%        \item Sub-item 1
+%        \item Sub-item 2
+%    \end{itemize}
+%    \item Another main item
+%\end{itemize}
+
+
+\subsection{Aim}
+<++>
+
+\section{Methods}
+<++>
+
+%\noindent
+%\begin{minipage}{\columnwidth}
+%\centering
+%\includegraphics[width=1\textwidth]{image.jpg}
+%\captionof{figure}{Market Trends in Decentraland} % Caption for the figure
+%\label{fig:markettrends} % Label for referencing
+%\end{minipage}
+
+\section{Results}
+<++>
+
+\section{Discussion}
+<++>
+
+\section{Conclusion}
+<++>
+
+\section*{Acknowledgement}
+
+\begin{thebibliography}{8}
+\bibitem{1} <++>
+\end{thebibliography}
+
+\end{multicols}
+\end{document}

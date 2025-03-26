@@ -31,7 +31,7 @@ nnoremap <silent>    <A-9> :BufferLast<CR>
 " Pin/unpin buffer
 nnoremap <silent>    <A-p> :BufferPin<CR>
 " Close buffer
-nnoremap <silent>    <A-w> :BufferClose<CR>
+nnoremap <silent>    <A-w> :BufferClose!<CR>
 " Wipeout buffer
 "                          :BufferWipeout<CR>
 " Close commands
@@ -72,15 +72,19 @@ nnoremap <silent> gs :Lspsaga signature_help<CR>
 nnoremap <C-A-s> :vsplit<CR>
 
 " use alt+hjkl to move between split/vsplit panels
-tnoremap <A-h> <C-\><C-n><C-w>h
+nnoremap <A-H> <C-w>h
+nnoremap <A-J> <C-w>j
+nnoremap <A-K> <C-w>k
+nnoremap <A-L> <C-w>l
 
+tnoremap <A-H> <C-\><C-n><C-w>h
+tnoremap <A-J> <C-\><C-n><C-w>j
+tnoremap <A-K> <C-\><C-n><C-w>k
+tnoremap <A-L> <C-\><C-n><C-w>l
 
-" tnoremap <A-j> <C-\><C-n><C-w>j
-" tnoremap <A-k> <C-\><C-n><C-w>k
-tnoremap <A-l> <C-\><C-n><C-w>l
+"nnoremap <A-l> <C-w>l
 " nnoremap <A-j> <C-w>j
 " nnoremap <A-k> <C-w>k
-"nnoremap <A-l> <C-w>l
 
 nnoremap <silent> <C-i> :IndentGuidesToggle <CR>
 
@@ -93,7 +97,8 @@ nnoremap <silent> <C-i> :IndentGuidesToggle <CR>
   vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Ctrl-s to save
-  noremap <silent> <C-S>          :update<CR>
+  noremap <C-s>          :update<CR>
+  inoremap <C-s>         <Esc>:update<CR>a
 
   " Reload init.vim
   nnoremap <Leader>r :source ~/.config/nvim/init.vim<CR>
@@ -140,9 +145,9 @@ nnoremap <silent> <C-i> :IndentGuidesToggle <CR>
   vnoremap <C-z> u
 
 " Redo functionality
-  nnoremap <C-S-z> <C-r>
-  inoremap <C-S-z> <C-O><C-r>
-  vnoremap <C-S-z> <C-r>
+  nnoremap <C-Z> <C-r>
+  inoremap <C-Z> <C-O><C-r>
+  vnoremap <C-Z> <C-r>
 
 " Allow CTRL+BackSpace to delete whole word, and CTRL+SHIFT+BS to delete word
 " containing special characters
@@ -196,5 +201,15 @@ nnoremap <silent> <C-i> :IndentGuidesToggle <CR>
 
 " Toggle spell-check
 nnoremap <M-c> :set spell! spelllang=en_us<CR>
+
+" press escape to enter normal mode in terminal
+autocmd TermOpen * tnoremap <buffer> <Esc> <C-\><C-n> 
+autocmd FileType * tnoremap <buffer> <Esc> <C-c>
+
+function! OpenTerminal()
+  split term://bash
+  resize 5
+  tnoremap <buffer> <Esc> <C-\><C-n>
+endfunction
 
 
