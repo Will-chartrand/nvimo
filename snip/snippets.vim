@@ -37,7 +37,7 @@ autocmd FileType html nnoremap <Space><Space> /<++><Enter>"_c4l
 " -------------
 autocmd FileType tex inoremap ;def \noindent \textbf{Definition.}%<CR>\hspace{0.5em}%<CR>\hangindent=1.5em%<CR>
 autocmd FileType tex inoremap ;ni \noindent<CR>
-autocmd FileType tex inoremap ;vs \vspace{12pt}
+autocmd FileType tex inoremap ;vs \vspace{0.5em}<CR>
 autocmd FileType tex inoremap ;np \newpage
 autocmd FileType tex inoremap ;cite \cite{}<Esc>i
 autocmd FileType tex inoremap ;sec \section{}<Esc>i
