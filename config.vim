@@ -5,6 +5,9 @@ set expandtab
 set linebreak
 set softtabstop=2
 
+set undofile
+set undodir=$HOME/.config/nvim/undo
+
 autocmd FileType markdown setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab " Prevent ftplugin from setting tab width
 
 let g:session_autosave = 'no'
