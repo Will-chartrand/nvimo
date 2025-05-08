@@ -202,6 +202,52 @@ nnoremap <silent> <C-i> :IndentGuidesToggle <CR>
 " Toggle spell-check
 nnoremap <M-c> :set spell! spelllang=en_us<CR>
 
+" Comment out lines
+augroup CommentMapping
+    autocmd!
+    autocmd FileType * call SetupCommentMapping()
+augroup END
+
+function! SetupCommentMapping()
+    let l:comment_char = ''
+
+    if index(['c', 'cpp', 'java'], &filetype) >= 0
+        let l:comment_char = '//'
+    elseif index(['tex', 'plaintex'], &filetype) >= 0
+        let l:comment_char = '%'
+    elseif &filetype ==# 'vim'
+        let l:comment_char = '"'
+    else
+        " Default to Python-style comment for all other filetypes
+        let l:comment_char = '#'
+    endif
+
+    execute 'noremap <buffer> <C-/> :call ApplyExpressionToLine("' . l:comment_char . '")<CR>:noh<CR>'
+endfunction
+
+function! ApplyExpressionToLine(synt)
+  let line = getline('.')
+  let prefix = a:synt . ' '
+
+  if line =~ '^' . escape(prefix, '$^.*\/[]') " Escape special chars just in case
+    execute 's/^' . escape(prefix, '/\') . '//'
+  else
+    execute 'normal! 0i' . a:synt . " "
+  endif
+endfunction
+
+" Run pdflatex and open pdf
+nnoremap <Leader>po :execute 'silent !xdg-open *.pdf >/dev/null 2>&1 & disown'<CR><CR>
+nnoremap <Leader>pr :call OpenTerminal()<CR>ls *.tex \| entr -n pdflatex *.tex<CR><C-\><C-n><C-w><C-w>
+nnoremap <Leader>ps :!pkill pdflatex<CR>
+nnoremap <Leader>pb :!bibtex research<CR><CR>
+
+
+
+
+
+
+
 " press escape to enter normal mode in terminal
 autocmd TermOpen * tnoremap <buffer> <Esc> <C-\><C-n> 
 autocmd FileType * tnoremap <buffer> <Esc> <C-c>
