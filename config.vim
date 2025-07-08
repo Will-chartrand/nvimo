@@ -90,6 +90,7 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.js'
 
 " Coc config
 let g:coc_global_extensions = [
+  \ 'coc-pyright',
   \ 'coc-emmet',
   \ 'coc-css',
   \ 'coc-go',
@@ -100,6 +101,7 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-flutter',
   \ 'coc-texlab',
+  \ 'coc-rust-analyzer',
   \ ]
 
 " Open help dialog in new buffer in the same window

@@ -63,4 +63,10 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'honza/vim-snippets'
 "Plug 'SirVer/ultisnips'
 "Plug 'natebosch/dartlang-snippets'
+" Plug 'williamboman/mason.nvim'
+" Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
+Plug 'MeanderingProgrammer/render-markdown.nvim'
+
+
 call plug#end()

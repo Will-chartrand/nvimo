@@ -9,6 +9,7 @@ nnoremap <expr> k v:count ? 'k' : 'gk'
 
 " Make it so curly braces auto return and indent
 inoremap {<CR> {<CR>}<Esc>O
+inoremap (<CR> (<CR>)<Esc>O
 
 " BARBAR TAB MANAGER
 "============================
@@ -86,7 +87,7 @@ tnoremap <A-L> <C-\><C-n><C-w>l
 " nnoremap <A-j> <C-w>j
 " nnoremap <A-k> <C-w>k
 
-nnoremap <silent> <C-i> :IndentGuidesToggle <CR>
+" nnoremap <silent> <Tab> :IndentGuidesToggle <CR>
 
 " Move lines up or down
   nnoremap <A-j> :m .+1<CR>==
@@ -211,7 +212,7 @@ augroup END
 function! SetupCommentMapping()
     let l:comment_char = ''
 
-    if index(['c', 'cpp', 'java'], &filetype) >= 0
+    if index(['c', 'cpp', 'java', 'typescriptreact', 'js'], &filetype) >= 0
         let l:comment_char = '//'
     elseif index(['tex', 'plaintex'], &filetype) >= 0
         let l:comment_char = '%'
@@ -224,6 +225,8 @@ function! SetupCommentMapping()
 
     execute 'noremap <buffer> <C-/> :call ApplyExpressionToLine("' . l:comment_char . '")<CR>:noh<CR>'
 endfunction
+
+noremap <C-/> :
 
 function! ApplyExpressionToLine(synt)
   let line = getline('.')

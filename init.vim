@@ -1,4 +1,5 @@
 " Include keymap file
+" source ~/.config/nvim/lua/plugs.lua
 source ~/.config/nvim/plugs.vim 
 source ~/.config/nvim/config.vim 
 source ~/.config/nvim/maps.vim 
