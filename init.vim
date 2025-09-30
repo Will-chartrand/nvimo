@@ -1,9 +1,14 @@
 " Include keymap file
-" source ~/.config/nvim/lua/plugs.lua
+
+"Vimscript
 source ~/.config/nvim/plugs.vim 
 source ~/.config/nvim/config.vim 
 source ~/.config/nvim/maps.vim 
 source ~/.config/nvim/snip/snippets.vim
+
+" Lua
+" source ~/.config/nvim/pckr.lua
+" source ~/.config/nvim/lua/plugs.lua
 
 "Refresh vim as soon as configurations have changed
 set autoread

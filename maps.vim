@@ -41,7 +41,7 @@ nnoremap <silent>    <A-w> :BufferClose!<CR>
 "                          :BufferCloseBuffersLeft<CR>
 "                          :BufferCloseBuffersRight<CR>
 " Magic buffer-picking mode
-nnoremap <silent> <C-TAB>    :BufferPick<CR>
+nnoremap <silent> <leader>d    :BufferPick<CR>
 " Sort automatically by...
 nnoremap <silent> <leader>bb :BufferOrderByBufferNumber<CR>
 nnoremap <silent> <leader>bd :BufferOrderByDirectory<CR>
@@ -71,8 +71,9 @@ nnoremap <silent> gs :Lspsaga signature_help<CR>
 
 " vsplit
 nnoremap <C-A-s> :vsplit<CR>
+nnoremap <C-A-S> :vsplit<CR>
 
-" use alt+hjkl to move between split/vsplit panels
+" use alt+shift+hjkl to move between split/vsplit panels
 nnoremap <A-H> <C-w>h
 nnoremap <A-J> <C-w>j
 nnoremap <A-K> <C-w>k
@@ -83,26 +84,23 @@ tnoremap <A-J> <C-\><C-n><C-w>j
 tnoremap <A-K> <C-\><C-n><C-w>k
 tnoremap <A-L> <C-\><C-n><C-w>l
 
-"nnoremap <A-l> <C-w>l
-" nnoremap <A-j> <C-w>j
-" nnoremap <A-k> <C-w>k
 
 " nnoremap <silent> <Tab> :IndentGuidesToggle <CR>
 
 " Move lines up or down
-  nnoremap <A-j> :m .+1<CR>==
-  nnoremap <A-k> :m .-2<CR>==
-  inoremap <A-j> <Esc>:m .+1<CR>==gi
-  inoremap <A-k> <Esc>:m .-2<CR>==gi
-  vnoremap <A-j> :m '>+1<CR>gv=gv
-  vnoremap <A-k> :m '<-2<CR>gv=gv
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Ctrl-s to save
-  noremap <C-s>          :update<CR>
-  inoremap <C-s>         <Esc>:update<CR>a
+noremap <C-s>          :update<CR>
+inoremap <C-s>         <Esc>:update<CR>a
 
-  " Reload init.vim
-  nnoremap <Leader>r :source ~/.config/nvim/init.vim<CR>
+" Reload init.vim
+nnoremap <Leader>r :source ~/.config/nvim/init.vim<CR>
 
 " Toggle autoclosing brackets
   noremap <silent> <C-_>          :CloseTagToggleBuffer<CR>
@@ -203,13 +201,13 @@ tnoremap <A-L> <C-\><C-n><C-w>l
 " Toggle spell-check
 nnoremap <M-c> :set spell! spelllang=en_us<CR>
 
+noremap <C-/> :
+
 " Run pdflatex and open pdf
 nnoremap <Leader>po :execute 'silent !xdg-open *.pdf >/dev/null 2>&1 & disown'<CR><CR>
 nnoremap <Leader>pr :call OpenTerminal()<CR>ls *.tex \| entr -n pdflatex *.tex<CR><C-\><C-n><C-w><C-w>
 nnoremap <Leader>ps :!pkill pdflatex<CR>
 nnoremap <Leader>pb :!bibtex research<CR><CR>
-
-
 
 " press escape to enter normal mode in terminal
 autocmd TermOpen * tnoremap <buffer> <Esc> <C-\><C-n> 
