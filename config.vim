@@ -49,17 +49,6 @@ au BufReadPost *
         \ execute("normal `\"") |
     \ endif
 
-" Remove default maps for bullet-list plugin
-let g:bullets_set_mappings = 0
-" add in ctrl+Enter for making a new bullet point
-let g:bullets_custom_mappings = [
-      \ ['imap', '<C-CR>', '<Plug>(bullets-newline)'],
-      \ ]
-
-
-" Set of pairs which will be autoclosed
-let g:AutoPairs = {'(':')', '[':']', '{':'}', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
-
 " Allow treesitter to collapse
 "set foldmethod=indent
 "set foldexpr=nvim_treesitter#foldexpr()

@@ -37,6 +37,23 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 
 
+-- Folds
+--===========================
+vim.o.foldmethod = "manual"
+vim.o.foldenable = true
+vim.o.foldlevelstart = 0        -- 👈 start WITH folds closed
+vim.o.viewoptions = "folds,cursor"
+
+vim.cmd([[
+  augroup remember_folds
+    autocmd!
+    autocmd BufWinLeave *.* mkview!
+    autocmd BufWinEnter *.* silent! loadview
+  augroup END
+]])
+
+
+
 -- Toggle
 -- vim.keymap.set('n', '<C-b>', ':NERDTreeToggle<CR>', { silent = true })
 --===========================
