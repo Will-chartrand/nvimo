@@ -61,6 +61,18 @@ return require('packer').startup(function(use)
   use 'MeanderingProgrammer/render-markdown.nvim'
   use 'nvim-mini/mini.nvim'
 
+  use {
+    "stevearc/oil.nvim",
+    config = function()
+      require("oil").setup({
+        default_file_explorer = false,
+        buf_options = {
+          buflisted = true
+        }
+      })
+    end
+  }
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

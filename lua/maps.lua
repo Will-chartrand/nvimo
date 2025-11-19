@@ -16,7 +16,9 @@ vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
 -- File Explorer
 ----
 -- Open File Explorer
-vim.keymap.set('n', '<C-b>', vim.cmd.Lex)
+-- vim.keymap.set('n', '<C-b>', vim.cmd.Lex)
+vim.keymap.set("n", "<C-b>", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
+
 
 
 -- move up and down through wrapped lines
