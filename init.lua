@@ -53,6 +53,9 @@ vim.cmd([[
 ]])
 
 
+-- Make it so current directory follow directory of current buffer's file
+vim.opt.autochdir = true
+
 
 -- Toggle
 -- vim.keymap.set('n', '<C-b>', ':NERDTreeToggle<CR>', { silent = true })

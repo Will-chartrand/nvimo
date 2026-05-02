@@ -123,3 +123,8 @@ vim.keymap.set('n', '<Leader>po', function()
   vim.fn.system('xdg-open *.pdf >/dev/null 2>&1 & disown')
 end, { silent = true })
 
+
+-- open file under cursor. create it if it doesn't exist
+vim.keymap.set('n', 'gf', ':e <cfile><cr>')
+
+
